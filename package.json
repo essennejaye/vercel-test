@@ -1,0 +1,23 @@
+{
+  "name": "testing-vercel-node",
+  "version": "1.0.0",
+  "description": "Tests the deploy process (Vercel).",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/essellejaye/testing-vercel-node.git"
+  },
+  "author": "Esselle Jaye",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/essellejaye/testing-vercel-node/issues"
+  },
+  "homepage": "https://github.com/essellejaye/testing-vercel-node#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Testing Vercel Node deployment</title>
+    </head>
+    <body>
+        <h1>Testing Node Deployment</h1>
+        <p>
+            <div>
+                This micro app simply tests the Node deployment process.
+            </div>
+            <div>
+                Seeing this page means that the static files deployed just fine.
+            </div>
+            <div>
+                Click the button below to confirm that the backend API was also deployed.
+                A message should appear below the button when clicked.
+            </div>
+        </p>
+        <button id="click-here">Click Here</button>
+        <p>
+            <div id='message-area'></div>
+        </p>
+        <script>
+            (function () {
+                let btn = document.getElementById('click-here')
+                let msgarea = document.getElementById('message-area')
+                btn.addEventListener('click', async function() {
+                    let resp = await fetch("/api/test-endpoint")
+                    let data = resp.ok ? await resp.json() : null
+                    if (data) {
+                        msgarea.textContent = `id: ${data.id}, text: ${data.text}`
+                    } else {
+                        msgarea.textContent = 'Error: unable to retrieve data from endpoint.'
+                    }
+                })
+            })()
+        </script>
+    </body>
+</html>
